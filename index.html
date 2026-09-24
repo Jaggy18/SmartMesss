@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>SmartMess - Digital Mess Management</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- Header -->
+    <header>
+        <h1>🍽️ SmartMess</h1>
+        <p>Digital Mess Management System</p>
+    </header>
+
+    <!-- Navigation -->
+    <nav>
+        <a href="#home">Home</a>
+        <a href="#menu">Today's Menu</a>
+        <a href="#weekly">Weekly Menu</a>
+        <a href="#feedback">Feedback</a>
+        <li>
+    <a href="admin-login.html">🔐 Admin</a>
+</li>
+    </nav>
+
+   <!-- Student Dashboard -->
+
+<section id="home" class="dashboard">
+
+    <div class="welcome-box">
+
+        <h2>👋 Welcome to SmartMess</h2>
+
+        <p id="welcomeMessage">
+            Your smart digital mess companion.
+        </p>
+
+        <p id="currentDate"></p>
+
+    </div>
+
+
+    <!-- Quick Stats -->
+
+    <div class="dashboard-cards">
+
+        <div class="dashboard-card">
+            <h3>🍽️ Today's Meal</h3>
+        <p id="dashboardMeal">Lunch</p>
+<span id="dashboardMealDetails">
+    Dal + Rice + Roti
+</span>    
+        </div>
+
+
+        <div class="dashboard-card">
+            <h3>⏰ Next Meal</h3>
+            <p>Lunch</p>
+            <span>12:30 PM</span>
+        </div>
+
+
+        <div class="dashboard-card">
+            <h3>⭐ Food Rating</h3>
+            <p id="dashboardRating">0.0 / 5</p>
+            <span>Student Rating</span>
+        </div>
+
+
+        <div class="dashboard-card">
+            <h3>💬 Feedback</h3>
+            <p id="dashboardFeedback">0</p>
+            <span>Total Feedback</span>
+        </div>
+
+    </div>
+
+
+    <!-- Quick Actions -->
+
+    <div class="quick-actions">
+
+        <h2>⚡ Quick Actions</h2>
+
+        <div class="action-buttons">
+
+            <a href="#menu">
+                <button>🍴 View Today's Menu</button>
+            </a>
+
+            <a href="#weekly">
+                <button>📅 Weekly Menu</button>
+            </a>
+
+            <a href="#feedback">
+                <button>⭐ Give Feedback</button>
+            </a>
+
+            <a href="#poll">
+                <button>🗳️ Vote for Tomorrow</button>
+            </a>
+
+        </div>
+
+    </div>
+
+</section> 
+
+    <!-- Today's Menu -->
+    <section id="menu">
+
+        <h2>🍴 Today's Menu</h2>
+
+        <div class="meal">
+            <h3>🌅 Breakfast</h3>
+            <p>Poha + Tea</p>
+            <p>⏰ 8:00 AM - 10:00 AM</p>
+        </div>
+
+        <div class="meal">
+            <h3>☀️ Lunch</h3>
+            <p>Dal + Rice + Roti + Vegetable + Salad</p>
+            <p>⏰ 12:30 PM - 2:30 PM</p>
+        </div>
+
+        <div class="meal">
+            <h3>🌙 Dinner</h3>
+            <p>Paneer Masala + Roti + Rice + Dal</p>
+            <p>⏰ 7:30 PM - 9:30 PM</p>
+        </div>
+
+    </section>
+
+    <!-- Weekly Menu -->
+<table>
+
+    <thead>
+        <tr>
+            <th>Day</th>
+            <th>Breakfast</th>
+            <th>Lunch</th>
+            <th>Dinner</th>
+        </tr>
+    </thead>
+
+    <tbody>
+
+        <tr>
+            <td>Monday</td>
+            <td id="monBreakfastMenu">Poha</td>
+            <td id="monLunchMenu">Dal Rice</td>
+            <td id="monDinnerMenu">Paneer</td>
+        </tr>
+
+        <tr>
+            <td>Tuesday</td>
+            <td id="tueBreakfastMenu">Upma</td>
+            <td id="tueLunchMenu">Rajma Rice</td>
+            <td id="tueDinnerMenu">Veg Biryani</td>
+        </tr>
+
+        <tr>
+            <td>Wednesday</td>
+            <td id="wedBreakfastMenu">Idli</td>
+            <td id="wedLunchMenu">Dal Roti</td>
+            <td id="wedDinnerMenu">Mix Veg</td>
+        </tr>
+
+        <tr>
+            <td>Thursday</td>
+            <td id="thuBreakfastMenu">Paratha</td>
+            <td id="thuLunchMenu">Chole Rice</td>
+            <td id="thuDinnerMenu">Paneer Roti</td>
+        </tr>
+
+        <tr>
+            <td>Friday</td>
+            <td id="friBreakfastMenu">Poha</td>
+            <td id="friLunchMenu">Dal Rice</td>
+            <td id="friDinnerMenu">Veg Pulao</td>
+        </tr>
+
+        <tr>
+            <td>Saturday</td>
+            <td id="satBreakfastMenu">Upma</td>
+            <td id="satLunchMenu">Dal Roti</td>
+            <td id="satDinnerMenu">Masala Rice</td>
+        </tr>
+
+        <tr>
+            <td>Sunday</td>
+            <td id="sunBreakfastMenu">Paratha</td>
+            <td id="sunLunchMenu">Special Thali</td>
+            <td id="sunDinnerMenu">Veg Biryani</td>
+        </tr>
+
+    </tbody>
+
+</table>
+
+    <!-- Feedback -->
+    <section id="feedback">
+
+        <h2>⭐ Food Feedback</h2>
+        <div class="feedback-summary">
+
+    <div class="summary-card">
+        <h3>⭐ Average Rating</h3>
+        <p id="averageRating">0.0 / 5</p>
+    </div>
+
+    <div class="summary-card">
+        <h3>👥 Total Feedback</h3>
+        <p id="totalFeedback">0</p>
+    </div>
+
+</div>
+
+        <form>
+            <h3 class="feedback-title">📝 Recent Feedback</h3>
+
+<div id="feedbackList">
+    <!-- Feedback will appear here -->
+</div>
+
+            <label for="name">Your Name:</label>
+            <input type="text" id="name" placeholder="Enter your name">
+
+            <label for="rating">Food Rating:</label>
+
+            <select id="rating">
+                <option value="5">⭐⭐⭐⭐⭐ Excellent</option>
+                <option value="4">⭐⭐⭐⭐ Good</option>
+                <option value="3">⭐⭐⭐ Average</option>
+                <option value="2">⭐⭐ Poor</option>
+                <option value="1">⭐ Very Poor</option>
+            </select>
+
+            <label for="message">Your Feedback:</label>
+
+            <textarea
+                id="message"
+                rows="5"
+                placeholder="Write your feedback here...">
+            </textarea>
+
+            <button type="submit">Submit Feedback</button>
+
+        </form>
+
+    </section>
+    <!-- Tomorrow's Menu Poll -->
+
+<section id="poll">
+
+    <h2>🗳️ Tomorrow's Menu Poll</h2>
+
+    <p>Which food would you like to have tomorrow?</p>
+
+    <div class="poll-options">
+
+        <label>
+            <input type="radio" name="food" value="Veg Biryani">
+            🍚 Veg Biryani
+        </label>
+
+        <label>
+            <input type="radio" name="food" value="Paneer Masala">
+            🧀 Paneer Masala
+        </label>
+
+        <label>
+            <input type="radio" name="food" value="Fried Rice">
+            🍜 Fried Rice
+        </label>
+
+    </div>
+
+    <button onclick="submitVote()">Vote Now</button>
+
+    <div id="pollResult"></div>
+
+</section>
+
+    <!-- Footer -->
+    <footer>
+        <p>© 2026 SmartMess | College Digital Solution</p>
+    </footer>
+
+    <script src="script.js"></script>
+
+</body>
+</html>

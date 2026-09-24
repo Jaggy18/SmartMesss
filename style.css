@@ -1,0 +1,664 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f7fb;
+    color: #222;
+}
+
+/* Header */
+header {
+    background: #1e3a8a;
+    color: white;
+    text-align: center;
+    padding: 30px 15px;
+}
+
+header h1 {
+    font-size: 36px;
+    margin-bottom: 8px;
+}
+
+header p {
+    font-size: 17px;
+}
+
+/* Navigation */
+nav {
+    background-color: white;
+    padding: 15px;
+    text-align: center;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+nav a {
+    text-decoration: none;
+    color: #1e3a8a;
+    font-weight: bold;
+    margin: 0 15px;
+}
+
+nav a:hover {
+    color: #2563eb;
+}
+
+/* Sections */
+section {
+    max-width: 1000px;
+    margin: 30px auto;
+    padding: 30px;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 3px 12px rgba(0,0,0,0.08);
+}
+
+section h2 {
+    color: #1e3a8a;
+    margin-bottom: 20px;
+}
+
+/* Meal Cards */
+.meal {
+    display: inline-block;
+    width: 31%;
+    margin: 1%;
+    padding: 20px;
+    background-color: #eef4ff;
+    border-radius: 10px;
+    text-align: center;
+    vertical-align: top;
+}
+
+.meal h3 {
+    margin-bottom: 12px;
+    color: #1e3a8a;
+}
+
+.meal p {
+    margin: 8px 0;
+}
+
+/* Weekly Menu Table */
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th,
+td {
+    border: 1px solid #ddd;
+    padding: 14px;
+    text-align: center;
+}
+
+th {
+    background-color: #1e3a8a;
+    color: white;
+}
+
+tr:nth-child(even) {
+    background-color: #f5f7fa;
+}
+
+/* Feedback Form */
+form {
+    max-width: 600px;
+    margin: auto;
+}
+
+label {
+    display: block;
+    margin-top: 15px;
+    margin-bottom: 6px;
+    font-weight: bold;
+}
+
+input,
+select,
+textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 15px;
+}
+
+textarea {
+    resize: vertical;
+}
+
+button {
+    margin-top: 20px;
+    padding: 12px 25px;
+    background-color: #1e3a8a;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+button:hover {
+    background-color: #2563eb;
+}
+
+/* Footer */
+footer {
+    background-color: #1e3a8a;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    margin-top: 40px;
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+
+    nav a {
+        display: block;
+        margin: 10px;
+    }
+
+    .meal {
+        width: 100%;
+        margin: 10px 0;
+    }
+
+    section {
+        margin: 20px 10px;
+        padding: 20px;
+        overflow-x: auto;
+    }
+
+    header h1 {
+        font-size: 28px;
+    }
+}/* Feedback List */
+
+.feedback-title {
+    margin-top: 30px;
+    margin-bottom: 15px;
+    color: #1e3a8a;
+}
+
+.feedback-card {
+    background-color: #f4f7fb;
+    padding: 15px;
+    margin-top: 12px;
+    border-radius: 8px;
+    border-left: 5px solid #1e3a8a;
+}
+
+.feedback-card h4 {
+    margin-bottom: 5px;
+    color: #1e3a8a;
+}
+
+.feedback-card .rating {
+    margin-bottom: 8px;
+}
+
+.feedback-card p {
+    margin-top: 5px;
+}
+/* Feedback Summary */
+
+.feedback-summary {
+    display: flex;
+    gap: 20px;
+    margin-bottom: 25px;
+}
+
+.summary-card {
+    flex: 1;
+    background-color: #eef4ff;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.summary-card h3 {
+    color: #1e3a8a;
+    margin-bottom: 10px;
+}
+
+.summary-card p {
+    font-size: 28px;
+    font-weight: bold;
+    color: #2563eb;
+}
+
+@media (max-width: 600px) {
+
+    .feedback-summary {
+        flex-direction: column;
+    }
+
+}
+/* Tomorrow's Menu Poll */
+
+.poll-options {
+    margin: 20px 0;
+}
+
+.poll-options label {
+    display: block;
+    background-color: #f4f7fb;
+    padding: 15px;
+    margin: 10px 0;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.poll-options label:hover {
+    background-color: #eef4ff;
+}
+
+.poll-options input {
+    width: auto;
+    margin-right: 10px;
+}
+
+#pollResult {
+    margin-top: 25px;
+    padding: 20px;
+    background-color: #eef4ff;
+    border-radius: 10px;
+}
+
+#pollResult h3 {
+    color: #1e3a8a;
+    margin-bottom: 15px;
+}
+
+#pollResult p {
+    margin: 10px 0;
+}
+/* Student Dashboard */
+
+.dashboard {
+    background-color: transparent;
+    box-shadow: none;
+    padding: 10px;
+}
+
+.welcome-box {
+    background-color: #1e3a8a;
+    color: white;
+    padding: 35px;
+    border-radius: 15px;
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+.welcome-box h2 {
+    color: white;
+    font-size: 30px;
+    margin-bottom: 10px;
+}
+
+.welcome-box p {
+    margin: 8px;
+}
+
+
+/* Dashboard Cards */
+
+.dashboard-cards {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 18px;
+}
+
+.dashboard-card {
+    background-color: white;
+    padding: 22px;
+    border-radius: 12px;
+    text-align: center;
+    box-shadow: 0 3px 12px rgba(0,0,0,0.08);
+}
+
+.dashboard-card h3 {
+    color: #1e3a8a;
+    margin-bottom: 12px;
+}
+
+.dashboard-card p {
+    font-size: 25px;
+    font-weight: bold;
+    color: #2563eb;
+    margin-bottom: 8px;
+}
+
+.dashboard-card span {
+    color: #666;
+}
+
+
+/* Quick Actions */
+
+.quick-actions {
+    background-color: white;
+    margin-top: 25px;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 3px 12px rgba(0,0,0,0.08);
+}
+
+.quick-actions h2 {
+    text-align: center;
+}
+
+.action-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.action-buttons a {
+    text-decoration: none;
+}
+
+.action-buttons button {
+    margin-top: 10px;
+}
+
+
+/* Mobile Dashboard */
+
+@media (max-width: 900px) {
+
+    .dashboard-cards {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+}
+
+
+@media (max-width: 600px) {
+
+    .dashboard-cards {
+        grid-template-columns: 1fr;
+    }
+
+}
+/* ===============================
+   ADMIN LOGIN
+================================ */
+
+.login-container {
+    min-height: 60vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    padding: 30px;
+}
+
+.login-box {
+    width: 380px;
+
+    background-color: white;
+
+    padding: 35px;
+
+    border-radius: 15px;
+
+    box-shadow:
+        0 5px 20px rgba(0, 0, 0, 0.12);
+
+    text-align: center;
+}
+
+.login-box h2 {
+    color: #1e3a8a;
+
+    margin-bottom: 10px;
+}
+
+.login-box > p {
+    color: #666;
+
+    margin-bottom: 25px;
+}
+
+.login-box label {
+    display: block;
+
+    text-align: left;
+
+    margin-top: 15px;
+
+    font-weight: bold;
+
+    color: #333;
+}
+
+.login-box input {
+    width: 100%;
+
+    padding: 12px;
+
+    margin-top: 7px;
+
+    border: 1px solid #ccc;
+
+    border-radius: 8px;
+
+    box-sizing: border-box;
+
+    font-size: 15px;
+}
+
+.login-box button {
+    width: 100%;
+
+    margin-top: 25px;
+
+    padding: 12px;
+
+    background-color: #1e3a8a;
+
+    color: white;
+
+    border: none;
+
+    border-radius: 8px;
+
+    cursor: pointer;
+
+    font-size: 16px;
+}
+
+.login-box button:hover {
+    background-color: #2563eb;
+}
+
+#loginMessage {
+    margin-top: 15px;
+
+    font-weight: bold;
+}
+
+.login-box a {
+    display: inline-block;
+
+    margin-top: 20px;
+
+    text-decoration: none;
+
+    color: #1e3a8a;
+}
+/* ===============================
+   ADMIN MENU FORM
+================================ */
+
+#menuForm {
+    max-width: 600px;
+    margin: auto;
+}
+
+#menuForm label {
+    display: block;
+    margin-top: 15px;
+    margin-bottom: 6px;
+    font-weight: bold;
+}
+
+#menuForm input {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    box-sizing: border-box;
+}
+
+#menuForm button {
+    margin-top: 20px;
+}
+
+#menuMessage {
+    text-align: center;
+    margin-top: 15px;
+    font-weight: bold;
+}
+/* ===============================
+   ANALYTICS
+================================ */
+
+.analytics-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(5, 1fr);
+
+    gap: 15px;
+
+    margin-top: 20px;
+}
+
+.analytics-box {
+    background-color: #f4f7fb;
+
+    padding: 20px;
+
+    border-radius: 12px;
+
+    text-align: center;
+
+    border: 1px solid #e5e7eb;
+}
+
+.analytics-box h3 {
+    color: #1e3a8a;
+
+    font-size: 16px;
+}
+
+.analytics-box p {
+    font-size: 28px;
+
+    font-weight: bold;
+
+    color: #2563eb;
+
+    margin-top: 10px;
+}
+
+
+@media (max-width: 800px) {
+
+    .analytics-grid {
+        grid-template-columns:
+            repeat(2, 1fr);
+    }
+
+}
+
+
+@media (max-width: 500px) {
+
+    .analytics-grid {
+        grid-template-columns: 1fr;
+    }
+
+}
+/* ===============================
+   WEEKLY MENU ADMIN
+================================ */
+
+#weeklyMenuForm {
+    max-width: 800px;
+    margin: auto;
+}
+
+#weeklyMenuForm h3 {
+    color: #1e3a8a;
+    margin-top: 25px;
+    margin-bottom: 10px;
+}
+
+#weeklyMenuForm input {
+    width: 100%;
+    padding: 11px;
+    margin: 5px 0;
+
+    border: 1px solid #ccc;
+    border-radius: 8px;
+
+    box-sizing: border-box;
+}
+
+#weeklyMenuForm button {
+    margin-top: 25px;
+}
+
+#weeklyMenuMessage {
+    text-align: center;
+    margin-top: 15px;
+    font-weight: bold;
+}
+/* ===============================
+   FINAL UI POLISH
+================================ */
+
+html {
+    scroll-behavior: smooth;
+}
+
+nav a {
+    transition: 0.3s;
+}
+
+nav a:hover {
+    opacity: 0.8;
+}
+
+button {
+    transition: 0.3s;
+}
+
+button:hover {
+    transform: translateY(-2px);
+}
+
+section {
+    scroll-margin-top: 20px;
+}
+
+.feedback-card {
+    transition: 0.3s;
+}
+
+.feedback-card:hover {
+    transform: translateY(-3px);
+}

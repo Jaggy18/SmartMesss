@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>SmartMess - Admin Panel</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header>
+    <h1>🍽️ SmartMess</h1>
+    <p>Admin Management Panel</p>
+</header>
+
+<section class="dashboard">
+
+    <div class="welcome-box">
+        <h2>👨‍💼 Admin Dashboard</h2>
+        <p>Manage mess feedback, ratings and student poll results.</p>
+    </div>
+
+    <!-- Summary Cards -->
+
+    <div class="dashboard-cards">
+
+        <div class="dashboard-card">
+            <h3>💬 Total Feedback</h3>
+            <p id="adminFeedback">0</p>
+            <span>Student Responses</span>
+        </div>
+
+        <div class="dashboard-card">
+            <h3>⭐ Average Rating</h3>
+            <p id="adminRating">0.0 / 5</p>
+            <span>Food Rating</span>
+        </div>
+
+        <div class="dashboard-card">
+            <h3>🗳️ Total Votes</h3>
+            <p id="adminVotes">0</p>
+            <span>Tomorrow's Poll</span>
+        </div>
+
+    </div>
+
+
+    <!-- Feedback Section -->
+
+    <div class="quick-actions">
+        <!-- Analytics Section -->
+
+<div class="quick-actions">
+
+    <h2>📊 SmartMess Analytics</h2>
+
+    <div class="analytics-grid">
+
+        <div class="analytics-box">
+            <h3>⭐ 5 Star</h3>
+            <p id="fiveStar">0</p>
+        </div>
+
+        <div class="analytics-box">
+            <h3>⭐ 4 Star</h3>
+            <p id="fourStar">0</p>
+        </div>
+
+        <div class="analytics-box">
+            <h3>⭐ 3 Star</h3>
+            <p id="threeStar">0</p>
+        </div>
+
+        <div class="analytics-box">
+            <h3>⭐ 2 Star</h3>
+            <p id="twoStar">0</p>
+        </div>
+
+        <div class="analytics-box">
+            <h3>⭐ 1 Star</h3>
+            <p id="oneStar">0</p>
+        </div>
+
+    </div>
+
+</div>
+
+        <h2>💬 Student Feedback</h2>
+
+        <div id="adminFeedbackList">
+            <p>No feedback available.</p>
+        </div>
+
+    </div>
+
+
+    <!-- Poll Results -->
+
+    <div class="quick-actions">
+        <!-- Menu Management -->
+
+<div class="quick-actions">
+
+    <h2>🍽️ Manage Today's Menu</h2>
+
+    <form id="menuForm">
+
+        <label>🌅 Breakfast</label>
+
+        <input
+            type="text"
+            id="adminBreakfast"
+            placeholder="Enter breakfast"
+            required
+        >
+
+        <label>🍛 Lunch</label>
+
+        <input
+            type="text"
+            id="adminLunch"
+            placeholder="Enter lunch"
+            required
+        >
+
+        <label>🌙 Dinner</label>
+
+        <input
+            type="text"
+            id="adminDinner"
+            placeholder="Enter dinner"
+            required
+        >
+
+        <button type="submit">
+            💾 Update Menu
+        </button>
+
+    </form>
+
+    <p id="menuMessage"></p>
+
+</div>
+// ===============================
+// WEEKLY MENU MANAGEMENT
+// ===============================
+
+let weeklyMenu = JSON.parse(
+    localStorage.getItem("smartMessWeeklyMenu")
+) || {
+
+    Monday: {
+        breakfast: "Poha",
+        lunch: "Dal Rice",
+        dinner: "Paneer"
+    },
+
+    Tuesday: {
+        breakfast: "Upma",
+        lunch: "Rajma Rice",
+        dinner: "Veg Biryani"
+    },
+
+    Wednesday: {
+        breakfast: "Idli",
+        lunch: "Dal Roti",
+        dinner: "Mix Veg"
+    },
+
+    Thursday: {
+        breakfast: "Paratha",
+        lunch: "Chole Rice",
+        dinner: "Paneer Roti"
+    },
+
+    Friday: {
+        breakfast: "Poha",
+        lunch: "Dal Rice",
+        dinner: "Veg Pulao"
+    },
+
+    Saturday: {
+        breakfast: "Upma",
+        lunch: "Dal Roti",
+        dinner: "Masala Rice"
+    },
+
+    Sunday: {
+        breakfast: "Paratha",
+        lunch: "Special Thali",
+        dinner: "Veg Biryani"
+    }
+};
+
+
+// Load weekly menu into form
+
+function loadWeeklyMenu() {
+
+    document.getElementById("monBreakfast").value =
+        weeklyMenu.Monday.breakfast;
+
+    document.getElementById("monLunch").value =
+        weeklyMenu.Monday.lunch;
+
+    document.getElementById("monDinner").value =
+        weeklyMenu.Monday.dinner;
+
+
+    document.getElementById("tueBreakfast").value =
+        weeklyMenu.Tuesday.breakfast;
+
+    document.getElementById("tueLunch").value =
+        weeklyMenu.Tuesday.lunch;
+
+    document.getElementById("tueDinner").value =
+        weeklyMenu.Tuesday.dinner;
+
+
+    document.getElementById("wedBreakfast").value =
+        weeklyMenu.Wednesday.breakfast;
+
+    document.getElementById("wedLunch").value =
+        weeklyMenu.Wednesday.lunch;
+
+    document.getElementById("wedDinner").value =
+        weeklyMenu.Wednesday.dinner;
+
+
+    document.getElementById("thuBreakfast").value =
+        weeklyMenu.Thursday.breakfast;
+
+    document.getElementById("thuLunch").value =
+        weeklyMenu.Thursday.lunch;
+
+    document.getElementById("thuDinner").value =
+        weeklyMenu.Thursday.dinner;
+
+
+    document.getElementById("friBreakfast").value =
+        weeklyMenu.Friday.breakfast;
+
+    document.getElementById("friLunch").value =
+        weeklyMenu.Friday.lunch;
+
+    document.getElementById("friDinner").value =
+        weeklyMenu.Friday.dinner;
+
+
+    document.getElementById("satBreakfast").value =
+        weeklyMenu.Saturday.breakfast;
+
+    document.getElementById("satLunch").value =
+        weeklyMenu.Saturday.lunch;
+
+    document.getElementById("satDinner").value =
+        weeklyMenu.Saturday.dinner;
+
+
+    document.getElementById("sunBreakfast").value =
+        weeklyMenu.Sunday.breakfast;
+
+    document.getElementById("sunLunch").value =
+        weeklyMenu.Sunday.lunch;
+
+    document.getElementById("sunDinner").value =
+        weeklyMenu.Sunday.dinner;
+}
+
+
+// Save weekly menu
+
+document.getElementById("weeklyMenuForm").addEventListener(
+    "submit",
+    function(event) {
+
+        event.preventDefault();
+
+
+        weeklyMenu = {
+
+            Monday: {
+                breakfast: document.getElementById("monBreakfast").value,
+                lunch: document.getElementById("monLunch").value,
+                dinner: document.getElementById("monDinner").value
+            },
+
+            Tuesday: {
+                breakfast: document.getElementById("tueBreakfast").value,
+                lunch: document.getElementById("tueLunch").value,
+                dinner: document.getElementById("tueDinner").value
+            },
+
+            Wednesday: {
+                breakfast: document.getElementById("wedBreakfast").value,
+                lunch: document.getElementById("wedLunch").value,
+                dinner: document.getElementById("wedDinner").value
+            },
+
+            Thursday: {
+                breakfast: document.getElementById("thuBreakfast").value,
+                lunch: document.getElementById("thuLunch").value,
+                dinner: document.getElementById("thuDinner").value
+            },
+
+            Friday: {
+                breakfast: document.getElementById("friBreakfast").value,
+                lunch: document.getElementById("friLunch").value,
+                dinner: document.getElementById("friDinner").value
+            },
+
+            Saturday: {
+                breakfast: document.getElementById("satBreakfast").value,
+                lunch: document.getElementById("satLunch").value,
+                dinner: document.getElementById("satDinner").value
+            },
+
+            Sunday: {
+                breakfast: document.getElementById("sunBreakfast").value,
+                lunch: document.getElementById("sunLunch").value,
+                dinner: document.getElementById("sunDinner").value
+            }
+        };
+
+
+        localStorage.setItem(
+            "smartMessWeeklyMenu",
+            JSON.stringify(weeklyMenu)
+        );
+
+
+        document.getElementById(
+            "weeklyMenuMessage"
+        ).textContent =
+            "✅ Weekly menu updated successfully!";
+
+
+        document.getElementById(
+            "weeklyMenuMessage"
+        ).style.color = "green";
+    }
+);
+
+
+loadWeeklyMenu();
+
+        <h2>🗳️ Tomorrow's Menu Poll</h2>
+
+        <div id="adminPollResults">
+            <p>No votes yet.</p>
+        </div>
+
+    </div>
+
+
+    <!-- Admin Actions -->
+
+    <div class="quick-actions">
+
+        <h2>⚙️ Admin Actions</h2>
+
+        <div class="action-buttons">
+
+            <button onclick="clearFeedback()">
+                🗑️ Clear Feedback
+            </button>
+
+            <button onclick="clearVotes()">
+                🗑️ Clear Poll Votes
+            </button>
+
+            <a href="index.html">
+                <button>
+                    🏠 Back to SmartMess
+                </button>
+                <button onclick="logoutAdmin()">
+    🚪 Logout
+</button>
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<footer>
+    <p>© 2026 SmartMess | Admin Panel</p>
+</footer>
+
+
+<script src="admin.js"></script>
+
+</body>
+</html>
